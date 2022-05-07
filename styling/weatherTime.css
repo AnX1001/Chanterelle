@@ -1,0 +1,26 @@
+.weaterTimerContainer {
+    grid-area: 1 / 1 / 1 / 6;
+    margin: 1% 5% 0 10%;
+    height: fit-content;
+    color: skyblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: auto;
+    font-size: 1.60vh;
+
+
+    justify-items: center;
+}
+
+
+
+.date_time {
+    grid-area: 1 / 1;
+}
+.coordinates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    color: skyblue;
+
+}

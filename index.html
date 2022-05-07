@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoppNett</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@500&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styling/styling.css">
+    <link rel="stylesheet" href="./styling/chatbot.css">
+    <link rel="stylesheet" href="./styling/weatherTime.css">
+    <link rel="stylesheet" href="./styling/mushroom.css">
+    <link rel="stylesheet" href="./styling/map.css">
+    <link rel="stylesheet" href="./styling/mobile.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+</head>
+<body>
+   
+
+    
+    <!--Grafisk grensesnitt har 3 lag
+    a.Topplag, b. mellomlag, c.underlaget-->  
+    <div class="superlayer">
+        
+        <div class="buttons">
+            <div class="button activeButton" id="hal2020">HAL2000</div>
+            <div class="button activeButton" id="start">Start</div>
+            <div class="button activeButton"id="leggtilSopp">Legg til sopp</div>
+            <label class="button" id="velg_fil_knapp" for="choose_file"></label>
+            <img src="/media/fingerclick.png" id="clickfinger">
+
+            
+        </div>
+
+        <div class="buttons_opposite_side">
+            <div class="button" id="tiger"></div>
+            <div class="button" id="strayBtn"></div>
+            <label for="submit_inputs" class="button activeButton" type="submit" id="btn_lagre_firestore"></label>
+            <div class="button empty" id="testknapp"></div>
+            <div class="button empty" id="bts_css"></div>
+            <div class="button empty" id="velg_bilde"></div>
+            <img src="/media/fingerclick.png" id="clickfinger_two">
+           
+        </div>
+    </div> 
+
+        <div class="gui_frame">
+            
+            <div class="screen">
+                <ul id="voice_commands">
+                    <li>List of voice commands:</li>
+                    <li>Hi / hello / how are you</li>
+                    <li>I'm good / nothing / </li>
+                    <li>Sure</li>
+                    <li>Yes</li>
+                    <li>Play a song</li>
+                    <li>Play Mozart</li>
+                    <li>So what have you been doing lately?</li>
+                    <li>What is chanterelle?</li>
+
+                </ul>
+                <div class="halshowPhoto"></div>
+                <!--Disse skjerm-elementene er selvstendige og plasseres i rutenettet til screen -->
+                 <div class="chatbot chatbot_component">
+                    <div class="green_circle hal"></div>
+                    <div class="HAL2020 hal">
+                        <div class="eye hal"></div>
+                        
+                    </div>
+                </div>       
+            
+
+                 <!-- Vær og tid -->
+                 <div class="weaterTimerContainer">
+                     <div class="date_time">Oppdaterer...</div>
+                     <div class="coordinates">
+                         <p></p>
+                         <p id="lengdegrader"></p>
+                        </div>
+                     <div class="weather">Oppdaterer...</div>
+                     
+                    
+                 </div>
+
+   
+                 <!-- Sopp komponenter -->
+                 <div class="hovedsopp skjermelement_en">
+                     <img class="main_mushroomphoto" src="/media/bluegills.jpg" alt="purpursopp"></img>
+                    
+                     <h1 class="soppTittel">Blue Milk Mushroom</h1>
+                     <p class="sopp_paragraph">The blue milk mushroom, is a species of agaric fungus in the family Russulaceae. A widely distributed species, it grows naturally in eastern North America, East Asia, and Central America; it has also been reported in southern France.</p>
+
+                 </div> 
+
+                 <div class="form skjermelement_to">
+                     
+                     <form action="" onsubmit="getValues(event)">
+                         <input type="file" id="choose_file">
+                         <input type="text" placeholder="Navn" class="artsnavn" required>
+                        <textarea type="text" placeholder="Beskrivelse" name="beskrivelse_inp" class="artsinfo mushroom" ></textarea required>
+                        <input type="number" step="any" class="inp_lat" placeholder="Lengdegrader">
+                        <input type="number" step="any" class="inp_long" placeholder="Breddegrader">
+                        <input type="text" placeholder="Spørsmål til soppekspert" name="spm_ekspert" class="ekspert_spm mushroom">
+                        <input type="submit" id="submit_inputs">
+                     </form> 
+
+                 </div> 
+
+                 <div class="map_container skjermelement_tre">
+                     <div id="mat_map"></div>
+                 </div>
+
+                 <input class="search_inp" autofocus="autofocus" onfocus="this.select()" placeholder="Skriv soppnavn..."></input><button id="speak">Speak</button>
+                 <div class="database_innhold"></div>
+    
+            </div>
+        </div>
+       
+
+<!-- Firebase -->
+    
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+
+
+<script>
+    var firebaseConfig = {
+        apiKey: "hidden",
+        authDomain: "x",
+        databaseURL: "x",
+        projectId: "x",
+        storageBucket: "x",
+        messagingSenderId: "X",
+        appId: "x",
+        measurementId: "X"
+      };
+    
+      firebase.initializeApp(firebaseConfig);
+      
+      
+      </script>
+
+    <script src="./script/script.js"></script>
+    <script src="./script/chatbot.js"></script>
+    <script src="./script/weatherTime.js"></script>
+    <script src="script/mushroom.js"></script>
+    <script src="script/firebase.js"></script>
+    <script src="script/map.js"></script>
+</body>
+</html>
+

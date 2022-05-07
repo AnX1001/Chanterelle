@@ -1,0 +1,44 @@
+
+.marker {
+    background-image: url('/media/chargingzoe.jpg');
+    background-size: cover;
+    width: 8vw;
+    height: 8vh;
+    border-radius: 20%;
+    cursor: pointer;
+    margin-top: 2vh;
+    opacity: 0.9;
+  }
+
+
+
+
+  .temp_marker {
+    width: 3%;
+    height: 5.1%;
+    background-image: url("/media/mushmarker.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
+    margin-top: -8vh;
+    border-radius: 20%;
+    padding: 5%;
+    font-size: 1.3vw;
+    opacity: 0.8;
+    display: grid;
+    
+    
+}
+
+#temp_marker_font {
+    
+    height: 20%;
+    font-size: 1vw;
+    width: 7vw;
+    margin-top: -6vh;
+    margin-left: -2vw;
+
+}
+
+  

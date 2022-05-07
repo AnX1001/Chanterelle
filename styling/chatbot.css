@@ -1,0 +1,175 @@
+.chatbot {
+    background-color: black;
+    grid-area: 2 / 2 / 5 / 5;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    z-index: -10;
+    visibility: hidden;
+
+}
+
+.HAL2020 {
+    width: 10%;
+    height: 15%;
+    border: 2px dotted white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+   
+}
+
+.HAL2020_animation_class {
+    animation: pulsate_outercircle 3s alternate 0.5s infinite;
+
+}
+
+@keyframes pulsate_outercircle {
+    100% {
+        transform: rotate3d(1, 1, 1, 760deg);
+        
+        
+    }
+}
+
+@keyframes pulsate_innercircle {
+    50% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(1.9);
+        
+        
+    }
+    100% {
+        transform: scale(1.1);
+        
+        
+    }
+}
+
+@keyframes pulsate_iris {
+    100% {
+        transform: scale(1.4);
+        
+        
+    }
+}
+
+.eye {
+    width: 22%;
+    border: 2px dotted skyblue;
+    height: 22%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.eye_animation_class {
+    animation: orbit_spin_up 3s alternate infinite;
+   
+
+}
+
+.green_circle {
+    width: 17.5%;
+    height: 30.1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted skyblue;
+    border-radius: 50%;
+    position: absolute;
+    
+    
+}
+
+.green_circle_animation_class {
+    animation: orbit_spin 3s alternate-reverse infinite;
+}
+
+@keyframes orbit_spin {
+
+    100% {
+        transform: rotate3d(0, 1, 0, 720deg); 
+        transform: rotateY(270deg);
+     
+    }
+  
+}
+
+@keyframes orbit_spin_up {
+    100% {
+        transform: rotate3d(2, 1, 1, 720deg); 
+        border: dotted skyeblue;  
+    }
+}
+
+
+
+
+.halshowPhoto_show {
+    z-index: 20;
+    background-image: url('/media/kantarell.jpg');
+    background-size: contain;
+    grid-area: 2 / 2 / 4 / 5;
+    margin: 5%;
+    animation: animatePhoto 15s;
+    background-repeat: no-repeat;
+    opacity: 0;
+
+    
+}
+
+
+@keyframes animatePhoto {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        display: block;
+        transform: scale(1.5);
+    }
+    90% {
+        opacity: 1;
+        display: block;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        display: block;
+        transform: scale(1.5);
+    }
+}
+
+#voice_commands {
+    color: skyblue;
+    border: 1px solid skyblue;
+    border-width: 0 1px 0 1px;
+    list-style-type: none;
+    border-radius: 15%;
+    padding: 5%;
+    grid-area: 2 / 4;
+    display: none;
+    animation: fadeIn 20s; 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
